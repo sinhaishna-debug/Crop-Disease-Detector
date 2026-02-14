@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .result-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            width: 400px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            margin: 15px 0;
+        }
+
+        .highlight {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        a:hover {
+            background: #1b5e20;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="result-card">
+    <h2>🩺 Disease Prediction:</h2>
+    <div class="highlight">{{ disease }}</div>
+
+    <h2>🌦 Weather Risk Level:</h2>
+    <div class="highlight">{{ risk }}</div>
+
+    <a href="/">Predict Again</a>
+</div>
+
+</body>
+</html>
