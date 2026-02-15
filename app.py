@@ -10,10 +10,11 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    # Dummy prediction (Render-safe version)
     disease = random.choice(["Healthy", "Leaf Blight", "Powdery Mildew"])
     risk = random.choice(["Low", "Moderate", "High"])
     return render_template('result.html', disease=disease, risk=risk)
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))  # Required for deployment
+    port = int(os.environ.get("PORT", 10000))  # Render uses PORT
     app.run(host="0.0.0.0", port=port)
