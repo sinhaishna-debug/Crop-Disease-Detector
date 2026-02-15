@@ -2,63 +2,76 @@
 <html>
 <head>
     <title>Prediction Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1d4350, #a43931);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: white;
         }
 
-        .result-card {
-            background: white;
+        .result-box {
+            background: rgba(255,255,255,0.1);
             padding: 40px;
             border-radius: 20px;
             text-align: center;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
             width: 400px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
 
-        h2 {
-            margin: 15px 0;
+        h1 {
+            margin-bottom: 20px;
         }
 
-        .highlight {
+        .disease {
             font-size: 22px;
-            font-weight: bold;
-            color: #2e7d32;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .risk {
+            font-size: 18px;
+            margin-bottom: 20px;
         }
 
         a {
-            display: inline-block;
-            margin-top: 20px;
             text-decoration: none;
-            background: #2e7d32;
-            color: white;
+            background: #00c853;
             padding: 10px 20px;
-            border-radius: 10px;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
         a:hover {
-            background: #1b5e20;
+            background: #00e676;
         }
     </style>
 </head>
 
 <body>
+    <div class="result-box">
+        <h1>🔍 Prediction Result</h1>
 
-<div class="result-card">
-    <h2>🩺 Disease Prediction:</h2>
-    <div class="highlight">{{ disease }}</div>
+        <div class="disease">
+            Disease: {{ disease }}
+        </div>
 
-    <h2>🌦 Weather Risk Level:</h2>
-    <div class="highlight">{{ risk }}</div>
+        <div class="risk">
+            Risk Level: {{ risk }}
+        </div>
 
-    <a href="/">Predict Again</a>
-</div>
-
+        <a href="/">Try Another Image</a>
+    </div>
 </body>
 </html>
